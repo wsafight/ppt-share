@@ -27,8 +27,7 @@
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>高效的资源加载策略</h3>
-            <p>网络协议的升级</p>
+            <h3>高效的资源加载策略(网络协议)</h3>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
@@ -37,10 +36,6 @@
             <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
                 <link rel="dns-prefetch" href="http://prefetch-example.com">
             </code></pre>
-        </section>
-
-        <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>高效的资源加载策略(网络协议)</h3>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
@@ -146,41 +141,219 @@
             <p> 编写 ES2015+ 代码是开发人员的胜利，部署 ES2015+ 代码则是用户的胜利！</p>
         </section>
 
-
-
-
-
-        <section>
-            <h3>解析</h3>
-            <p>解释器根据 Token 构建 Node，形成 DOM 树</p>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>构建渲染对象，渲染层</h3>
+            <ul>
+                <li>解释器根据 Token 构建 Node，形成 DOM 树</li>
+                <li>CSS 解析完成形成 CSSOM 后，在 DOM 树上附加样式信息，构建 RenderObject 树</li>
+                <li>同时，WebKit 根据网页层次结构创建 RenderLayer 树</li>
+                <li>合成 RenderLayer 层，<em>递归</em>布局计算(避免不必要重绘与重排)</li>
+            </ul>
         </section>
 
-        <section>DOM批处理 思考?</section>
-        <section>网页层次</section>
-
-        <section>
-            <h3>解析</h3>
-            <p>Css 解析完成后，在 DOM 树上附加样式信息，构建 RenderObject 树</p>
-            <p>同时，WebKit 根据网页层次结构创建 RenderLayer 树</p>
-
-        </section>
-        <section>css 优化 gpu</section>
-        <section>性能红利 flex grid</section>
-        <section>可视区优化</section>
-
-        <section>
-            <p>javaScript 引擎执行</p>
+        <section  data-auto-animate data-auto-animate-unmatched="fade">
+            <p>渲染优化时间(减少重绘)</p>
+            <p>计算布局 -> 绘图 -> 合成</p>
         </section>
 
-        <section>JS 优化</section>
-        <section>隐藏类</section>
+        <section  data-auto-animate data-auto-animate-unmatched="fade">
+            <p>渲染优化(性能红利)</p>
+            <ul>
+                <li>flex Grid 布局 </li>
+                <li>document.elementFromPoint(拖动时检测鼠标下的节点)</li>
+                <li>虚拟滚动</li>
+                <li>contain(当前修改的元素是否独立、是否影响其他元素)</li>
+                <li>content-visibility(跳过不在屏幕上的内容渲染)</li>
+            </ul>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <p>渲染优化(减少重绘)</p>
+            <p>多 canvas 合成</p>
+            <ul>
+                <li>1. 背景 </li>
+                <li>2. 障碍物 </li>
+                <li>3. 炸弹，金钱 </li>
+                <li>4. 任务</li>
+            </ul>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>Google V8 引擎</h3>
+            <img src="static/performance-2020/V8.png" style="width: 100%">
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>Google V8 引擎</h3>
+            <img src="static/performance-2020/V8.png" style="width: 100%">
+            <p>为什么 V8 早期引入 JIT ?</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>Google V8 引擎</h3>
+            <img src="static/performance-2020/V8.png" style="width: 100%">
+            <p>V8 创始人 Lars Bak 就是 HotSpot VM(使用范围最广的Java虚拟机) 主负责人</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎</h3>
+            <p>解释器(Ignition) JIT 编译 字节码(同时解析字节码)</p>
+            <p>编译器(Turbofan 二进制代码 | Liftoff[WebAssembly])</p>
+        </section>
+
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(隐藏类)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+                <script type="module">
+                    function add(a,b) {
+                      return a.x * b.y
+                    }
+                </script>
+            </code></pre>
+            没办法知道类型???
+        </section>
+
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(隐藏类)</h3>
+            <p>C++ 对象(静态语言)</p>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+                   class Class1 {
+                     int x;
+                     int y;
+                   }
+
+                   int add (Class1 a, Class1 b) {
+                     return a.x * b.y
+                   }
+            </code></pre>
+
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(隐藏类)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+                   class Class1 {
+                     int x;
+                     int y;
+                   }
+
+                   int add (Class1 a, Class1 b) {
+                     return a.x * b.y
+                   }
+            </code></pre>
+            <p>地址与类型， x: 基地址 y: 基地址 + 4 (平台确定)</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(隐藏类)</h3>
+            <p>静态语言 / 动态语言</p>
+            <ul>
+                <li>编译确定偏移位置 / 执行确定偏移位置(可修改)</li>
+                <li>偏移信息共享 / 自描述，存在自身结构(空间消耗)</li>
+                <li>偏移信息查找 / 属性名称匹配查找(时间消耗)</li>
+            </ul>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(隐藏类)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+                function Class1(x,y) {
+                    this.x = x;
+                    this.y = y;
+                }
+
+                var a = new Class1(1,1)
+                var b = new Class1(2,2)
+            </code></pre>
+            <p>隐藏类  x: 基地址 y: 基地址 + 4</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(隐藏类)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+                function Class1(x,y) {
+                    this.x = x;
+                    this.y = y;
+                }
+
+                var a = new Class1(1,1)
+                var b = new Class1(2,2)
+                b.z = 2
+
+            </code></pre>
+            <p>2 个隐藏类</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(隐藏类)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+                function Class1(x,y) {
+                    this.x = x;
+                    this.y = y;
+                }
+
+                var a = new Class1(1,1)
+                var b = new Class1(2,2)
+                b.z = 2
+
+            </code></pre>
+            <p>delete 也会破坏隐藏类吗？</p>
+
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(隐藏类)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+
+                function Class1(x,y) {
+                    this.x = x;
+                    this.y = y;
+                }
+
+                var a = new Class1(1,1)
+                var b = new Class1(2,2)
+                b.z = 2
+
+            </code></pre>
+            <p>如何将 delete 操作影响最小?</p>
+        </section>
+
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>V8 引擎优化(优化回滚)</h3>
+            <pre data-id="code"><code data-line-numbers="3-6|3-6|3-6|3-6|7-8" class="hljs" data-trim>
+                var count = 0;
+                function test() {
+                    count++
+                    if (count < 1000000) {
+                        return 123
+                    }
+                    var unknown = new Date()
+                    return unknown
+                }
+            </code></pre>
+            <p>如何将 delete 操作影响最小?</p>
+        </section>
+
+
+
+
+
+
         <section>优化回滚</section>
         <section>gpu 流水线</section>
 
         <section>V8 跳过预渲染</section>
 
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他优化(批处理机制)</h3>
+        </section>
 
-        <section>未来</section>
         <section>workerDom</section>
         <section>WASM 与 Webwork</section>
 
