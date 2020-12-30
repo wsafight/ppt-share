@@ -26,11 +26,6 @@
             <p>输入 url 的时候，WebKit 调用资源加载器依赖网络模块建立连接，异步或同步获取资源并存入缓存池中</p>
         </section>
 
-
-        <section></section>
-        <section>图片格式</section>
-        <section>type='module'</section>
-
         <section data-auto-animate data-auto-animate-unmatched="fade">
             <h3>高效的资源加载策略</h3>
             <p>网络协议的升级</p>
@@ -96,6 +91,63 @@
             <p>使用 4kb 的 AVIF polyfill</p>
             <img src="static/performance-2020/AVIF-js.png" style="width: 100%">
         </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(ES modules)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+                <script type="module">
+                  import {addTextToBody} from './utils.mjs';
+
+                  addTextToBody('Modules are pretty cool.');
+                </script>
+            </code></pre>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(ES modules)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+                <script type="module">
+                  import {addTextToBody} from './utils.mjs';
+
+                  addTextToBody('Modules are pretty cool.');
+                </script>
+            </code></pre>
+            <p> 每个支持 type="module" 的浏览器都支持你所熟知的大部分 ES2015+ 语法!!!!!</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(ES modules)</h3>
+            <p> 每个支持 type="module" 的浏览器都支持你所熟知的大部分 ES2015+ 语法!!!!!</p>
+            <ul>
+                <li>原生支持 async 和 await 函数</li>
+                <li>原生支持 class 类</li>
+                <li>原生支持箭头函数</li>
+                <li>原生支持 fetch 、Promises、Map、Set </li>
+            </ul>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(ES modules)</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+                <script type="module" src="app.js"></script>
+                <!-- 优雅降级 -->
+                <script nomodule src="app-legacy.js"></script>
+            </code></pre>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(ES modules)</h3>
+            <img width="100%" src="static/performance-2020/module-size.png">
+            <img width="100%" src="static/performance-2020/module-eval.png">
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(ES modules)</h3>
+            <p> 编写 ES2015+ 代码是开发人员的胜利，部署 ES2015+ 代码则是用户的胜利！</p>
+        </section>
+
+
+
 
 
         <section>
