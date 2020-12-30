@@ -49,8 +49,8 @@
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>高效的资源加载策(压缩算法)</h3>
-            <p>针对常见的 Web 资源内容，Google Brotli 的性能相比 Gzip 提高了 17-25%；</p>
+            <h3>高效的资源加载策略(压缩算法)</h3>
+            <p>针对常见的 Web 资源内容，Google 的新压缩算法 Brotli 的性能相比 Gzip 提高了 17-25%；</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
@@ -63,21 +63,38 @@
             <h3>高效的资源加载策略(图片格式)</h3>
             <p>Netflix(流媒体影视公司) 今年情人节公布 AVIF 图片格式</p>
             <p>AVIF由开源组织AOMedia开发，Netflix、Google与Apple均是该组织的成员。</p>
-            <img src="static/performance-2020/Brotli.png" style="width: 100%">
         </section>
 
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(图片格式)</h3>
+            <div style="display: flex; justify-content: space-between">
+                <img width="40%" src="static/performance-2020/AVIF-before.png">
+                <img width="40%" src="static/performance-2020/AVIF-after.png">
+            </div>
+        </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>资源加载</h3>
-            <p>dns 预取与 TCP 预连接</p>
-            <p>dns 预取技术利用较少的 CPU 和 带宽解析域名以及 IP 地址</p>
+            <h3>高效的资源加载策略(图片格式)</h3>
+            <div style="display: flex; justify-content: space-between">
+                <img width="40%" src="static/performance-2020/AVIF-before.png">
+                <img width="40%" src="static/performance-2020/AVIF-after.png">
+            </div>
+            <div style="display: flex; justify-content: space-between">
+                <div style="width: 40%;text-align: center">无损 png 700k</div>
+                <div style="width: 40%;text-align: center">AVIF 20k</div>
+            </div>
+        </section>
 
-            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-						function Example() {
-						  const [count, setCount] = useState(0);
-						}
-					</code></pre>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(图片格式)</h3>
+            <p>使用 AVIF ?</p>
+            <img src="static/performance-2020/AVIF.png" style="width: 100%">
+        </section>
 
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(图片格式)</h3>
+            <p>使用 4kb 的 AVIF polyfill</p>
+            <img src="static/performance-2020/AVIF-js.png" style="width: 100%">
         </section>
 
 
@@ -87,7 +104,7 @@
         </section>
 
         <section>DOM批处理 思考?</section>
-        <section>网页层次 </section>
+        <section>网页层次</section>
 
         <section>
             <h3>解析</h3>
@@ -137,7 +154,7 @@
     hash: true,
     center: true,
     // Learn about plugins: https://revealjs.com/plugins/
-    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
   });
 </script>
 </body>
