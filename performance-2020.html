@@ -326,7 +326,7 @@
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
             <h3>V8 引擎优化(优化回滚)</h3>
-            <pre data-id="code"><code data-line-numbers="3-6|3-6|3-6|3-6|7-8" class="hljs" data-trim>
+            <pre data-id="code"><code data-line-numbers="3|4|5|6|3|4|5|6|7-8" class="hljs" data-trim>
                 var count = 0;
                 function test() {
                     count++
@@ -337,16 +337,12 @@
                     return unknown
                 }
             </code></pre>
-            <p>如何将 delete 操作影响最小?</p>
         </section>
 
-
-
-
-
-
-        <section>优化回滚</section>
-        <section>gpu 流水线</section>
+        <section>
+            <h3>cpu 流水线</h3>
+            <p>预判你的操作，先让你过去</p>
+        </section>
 
         <section>V8 跳过预渲染</section>
 
@@ -355,14 +351,12 @@
         </section>
 
         <section>workerDom</section>
-        <section>WASM 与 Webwork</section>
+        <section>WASM</section>
 
         <section>
             不管当前硬件多强大，一台计算机的能力总是有限的，而你也无法预知你正在开发的应用将来会变得多庞大，也不会知道什么时间会出现性能瓶颈。
             性能的问题是一个习惯的问题，我们平时如果看到了更优的解法，认可这种解法，就应该改变自己原有的习惯，然后把应用这种更优解法变成你的习惯。
             性能的事情也是点滴的事情，你的页面不会因为多了1万次循环变得卡顿，也不会因为你减少了1万次循环变得异常流畅。但是一旦你的页面出现了卡顿，想再回头优化到流畅通常是很难的。
-            先做功能，回头再优化性能是不对的，性能的事情要在写代码前就已经解决的。
-
         </section>
     </div>
 </div>
