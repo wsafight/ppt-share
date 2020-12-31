@@ -27,7 +27,13 @@
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>高效的资源加载策略(网络协议)</h3>
+            <h3>高效的资源加载策略(网络协议的升级)</h3>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>高效的资源加载策略(浏览器机制)</h3>
+            <p> 减少链接的重定向。避免阻碍浏览器 DNS 预取技术</p>
+
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
@@ -37,6 +43,7 @@
                 <link rel="dns-prefetch" href="http://prefetch-example.com">
             </code></pre>
         </section>
+
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
             <h3>高效的资源加载策略(压缩算法)</h3>
@@ -117,7 +124,7 @@
                 <li>原生支持 async 和 await 函数</li>
                 <li>原生支持 class 类</li>
                 <li>原生支持箭头函数</li>
-                <li>原生支持 fetch 、Promises、Map、Set </li>
+                <li>原生支持 fetch 、Promises、Map、Set</li>
             </ul>
         </section>
 
@@ -151,15 +158,15 @@
             </ul>
         </section>
 
-        <section  data-auto-animate data-auto-animate-unmatched="fade">
+        <section data-auto-animate data-auto-animate-unmatched="fade">
             <p>渲染优化时间(减少重绘)</p>
             <p>计算布局 -> 绘图 -> 合成</p>
         </section>
 
-        <section  data-auto-animate data-auto-animate-unmatched="fade">
+        <section data-auto-animate data-auto-animate-unmatched="fade">
             <p>渲染优化(性能红利)</p>
             <ul>
-                <li>flex Grid 布局 </li>
+                <li>flex Grid 布局</li>
                 <li>document.elementFromPoint(拖动时检测鼠标下的节点)</li>
                 <li>虚拟滚动</li>
                 <li>contain(当前修改的元素是否独立、是否影响其他元素)</li>
@@ -171,9 +178,9 @@
             <p>渲染优化(减少重绘)</p>
             <p>多 canvas 合成</p>
             <ul>
-                <li>1. 背景 </li>
-                <li>2. 障碍物 </li>
-                <li>3. 炸弹，金钱 </li>
+                <li>1. 背景</li>
+                <li>2. 障碍物</li>
+                <li>3. 炸弹，金钱</li>
                 <li>4. 任务</li>
             </ul>
         </section>
@@ -206,7 +213,7 @@
             <h3>V8 引擎优化(隐藏类)</h3>
             <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
                 <script type="module">
-                    function add(a,b) {
+                    function add(a, b) {
                       return a.x * b.y
                     }
                 </script>
@@ -268,7 +275,7 @@
                 var a = new Class1(1,1)
                 var b = new Class1(2,2)
             </code></pre>
-            <p>隐藏类  x: 基地址 y: 基地址 + 4</p>
+            <p>隐藏类 x: 基地址 y: 基地址 + 4</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
@@ -303,7 +310,6 @@
 
             </code></pre>
             <p>delete 也会破坏隐藏类吗？</p>
-
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
@@ -339,24 +345,85 @@
             </code></pre>
         </section>
 
-        <section>
-            <h3>cpu 流水线</h3>
-            <p>预判你的操作，先让你过去</p>
-        </section>
-
-        <section>V8 跳过预渲染</section>
-
         <section data-auto-animate data-auto-animate-unmatched="fade">
             <h3>其他优化(批处理机制)</h3>
+            <p>在可接受的时间内，将多次调用合成一次调用</p>
+            <ul>
+                <li>Vue React 异步设值</li>
+                <li>requestAnimationFrame 操作 dom(fastdom)</li>
+                <li>大量而不实时计算数据修改</li>
+            </ul>
         </section>
 
-        <section>workerDom</section>
-        <section>WASM</section>
 
-        <section>
-            不管当前硬件多强大，一台计算机的能力总是有限的，而你也无法预知你正在开发的应用将来会变得多庞大，也不会知道什么时间会出现性能瓶颈。
-            性能的问题是一个习惯的问题，我们平时如果看到了更优的解法，认可这种解法，就应该改变自己原有的习惯，然后把应用这种更优解法变成你的习惯。
-            性能的事情也是点滴的事情，你的页面不会因为多了1万次循环变得卡顿，也不会因为你减少了1万次循环变得异常流畅。但是一旦你的页面出现了卡顿，想再回头优化到流畅通常是很难的。
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他优化(多线程)</h3>
+            <p>web-worker 优劣</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他优化(多线程)</h3>
+            <p>web-worker 优劣</p>
+            <p>pwa workerDom 渲染</p>
+        </section>
+
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他优化(多线程)</h3>
+            <p>web-worker 优劣</p>
+            <p>pwa workerDom 渲染</p>
+            <p>neo.mjs 多线程框架</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他优化(WASM 演进)</h3>
+            <p>解决 js 动态问题(asm.js)</p>
+            <pre data-id="code"><code data-line-numbers="3|4|5|6|3|4|5|6|7-8" class="hljs" data-trim>
+                var a = 1;
+                var x = a | 0;  // x 是32位整数
+                var y = +a;  // y 是64位浮点数
+            </code></pre>
+        </section>
+
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他优化(WASM 演进)</h3>
+            <p>解决 js 动态问题(WebAssembly)</p>
+            <p>java => .class</p>
+            <p>webAssembly => .wasm</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他优化(WASM 演进)</h3>
+            <p>解决 js 动态问题(WebAssembly)</p>
+            <p>C / C ++, Java, GO, C#, D, Haxe, TypeScript(AssemblyScript)...</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他优化(WASM 演进)</h3>
+            <p> 标准化中的 WASI：在 web 之外运行 WebAssembly 的系统接口</p>
+            <p> WebAssembly 是概念机的汇编语言，而不是物理机的汇编语言。 这就是它可以在各种不同计算机体系结构上运行的原因。</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <p>...</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <p>...</p>
+            <p>没有银弹</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <ul>
+                <li>不管当前硬件多强大，一台计算机的能力总是有限的，复杂系统开发，我们无法预料合适会出现性能瓶瓶颈</li>
+                <li>性能的问题是一个习惯的问题，看到了更优的解法后，应用这种更优解法变成你的习惯</li>
+                <li>性能的事情也是点滴的事情， 页面不会因为多了1万次循环变得卡顿，也不会因为减少了1万次循环变得异常流畅</li>
+            </ul>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            谢谢观看
         </section>
     </div>
 </div>
