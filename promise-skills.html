@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Promise 技巧</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>Promise 使用二三事</section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>产生背景</h3>
+            <p>web 应用是由事件驱动（异步）的</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>产生背景</h3>
+            <p>web 应用是由事件驱动（异步）的</p>
+            <p>事件回调的本质是消息收发，处理我们未来可能得到的数据</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>产生背景</h3>
+            <p>web 应用是由事件驱动（异步）的</p>
+            <p>事件回调的本质是消息收发，处理我们未来可能得到的数据</p>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+                <input type="text" id="search">
+                <script>
+                    document.getElementById('search')
+                        .addEventListener('change', () => {
+
+                        })
+                </script>
+            </code></pre>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>相互依赖的异步回调任务</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+              <script>
+                  getJson('xxxx', (err, data) => {
+                      if (err) {
+                          // 错误处理
+                          return
+                      }
+
+                      getJson('xxxx2', (err, data) => {
+                          // xxx
+                      })
+                  })
+              </script>
+            </code></pre>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>相互依赖的异步回调任务</h3>
+            <p>回调地狱</p>
+            <img src="static/promise-skills/callback-hell.jpg" style="width: 70%">
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>不相互依赖的异步回调任务</h3>
+            <p>如何处理？</p>
+            <p>能通过回调完成所有 Promise 的功能吗？如何实现？</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>不相互依赖的异步回调任务</h3>
+            <p>如何处理？</p>
+            <p>添加 状态 —— 有时间特性的数据（开始时修改状态，完成时修改并检查状态）</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>大量的异步回调任务</h3>
+            <p>如何处理？</p>
+            <p><a href="https://github.com/diamondio/better-queue" target="_blank">better-queue</a></p>
+            <p><a href="https://segmentfault.com/a/1190000040563076" target="_blank">使用 better-queue 管理复杂的任务</a></p>
+        </section>
+
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>利用 Promise 封装非同步代码</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+              <script>
+
+              </script>
+            </code></pre>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>利用 Promise 封装非同步代码</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+              <script>
+
+              </script>
+            </code></pre>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>利用 Promise 封装非同步代码</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+              <script>
+
+              </script>
+                结合 new Vue() + ref
+            </code></pre>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>利用 Promise 封装非同步代码</h3>
+            <p><a href="https://github.com/IvinWu/weRequest" target="_blank">weRequest</a></p>
+            <p><a href="https://segmentfault.com/a/1190000020794315" target="_blank">从 WeRequest 登陆态管理来聊聊业务代码</a></p>
+        </section>
+
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>Promise Cache</h3>
+            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+              <script>
+
+              </script>
+            </code></pre>
+        </section>
+
+
+
+
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他</h3>
+            <p><a href="https://cn.rx.js.org/">函数式响应编程库 rx</a></p>
+            <p><a href="https://xstate.js.org/docs/guides/states.html" target="_blank">复杂状态管理 XState</a></p>
+            <p><a href="https://segmentfault.com/a/1190000037532831" target="_blank">利用 XState(有限状态机) 编写易于变更的代码</a> </p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <p>谢谢观看</p>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+        center: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+</script>
+</body>
+</html>
