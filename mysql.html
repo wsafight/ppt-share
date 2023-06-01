@@ -19,128 +19,155 @@
         <section>MySQL 必知必会</section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>产生背景</h3>
-            <p>web 应用是由事件驱动（异步）的</p>
+            <h3>创建数据表</h3>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>产生背景</h3>
-            <p>web 应用是由事件驱动（异步）的</p>
-            <p>事件回调的本质是消息收发，处理我们未来可能得到的数据</p>
+            <h3>创建数据表</h3>
+            <p>如果新建数据库没有加索引，请问该表还有索引吗？</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>产生背景</h3>
-            <p>web 应用是由事件驱动（异步）的</p>
-            <p>事件回调的本质是消息收发，处理我们未来可能得到的数据</p>
-            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-                <input type="text" id="search">
-                <script>
-                    document.getElementById('search')
-                        .addEventListener('change', () => {
-
-                        })
-                </script>
-            </code></pre>
+            <h3>创建数据表</h3>
+            <p>如果新建数据库没有加索引，请问该表还有索引吗？</p>
+            <p>当表存在主键时，Innodb 使用 主键作为聚簇索引</p>
+            <p>当表不存在主键时，Innodb 使用唯一非空索引作为聚簇索引</p>
+            <p>当表没有主键，也没有合适的唯一索引时，Innodb隐含创建一个包含 rowid 的聚簇索引</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>相互依赖的异步回调任务</h3>
-            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-              <script>
-                  getJson('xxxx', (err, data) => {
-                      if (err) {
-                          // 错误处理
-                          return
-                      }
-
-                      getJson('xxxx2', (err, data) => {
-                          // xxx
-                      })
-                  })
-              </script>
-            </code></pre>
+            <h3>创建数据表</h3>
+            <p>如果新建数据库没有加索引，请问该表还有索引吗？</p>
+            <p>当表存在主键时，Innodb 使用 主键作为聚簇索引</p>
+            <p>当表不存在主键时，Innodb 使用唯一索引（非空）作为聚簇索引</p>
+            <p>当表没有主键，也没有合适的唯一索引时，Innodb隐含创建一个包含 rowid 的聚簇索引</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>相互依赖的异步回调任务</h3>
-            <p>回调地狱</p>
-            <img src="static/promise-skills/callback-hell.jpg" style="width: 70%">
+            <h3>创建数据表</h3>
+            <p>主键为什么要自增？</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>不相互依赖的异步回调任务</h3>
-            <p>如何处理？</p>
-            <p>能通过回调完成所有 Promise 的功能吗？如何实现？</p>
+            <h3>创建数据表</h3>
+            <p>使用 rowid 的陷阱</p>
+            <p>rowid 是全数据共享的</p>
+            <p>rowid 超过最大值会从 0 重新开始</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>不相互依赖的异步回调任务</h3>
-            <p>如何处理？</p>
-            <p>添加 状态 —— 有时间特性的数据（开始时修改状态，完成时修改并检查状态）</p>
+            <h3>创建数据表</h3>
+            <p>主键的类型如何选择？</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>大量的异步回调任务</h3>
-            <p>如何处理？</p>
-            <p><a href="https://github.com/diamondio/better-queue" target="_blank">better-queue</a></p>
-            <p><a href="https://segmentfault.com/a/1190000040563076" target="_blank">使用 better-queue 管理复杂的任务</a></p>
+            <h3>创建数据表</h3>
+            <p>主键的类型如何选择？</p>
+            <p>int 2147483647</p>
+            <p>bigint 9223372036854775807</p>
+            <p>unsigned type * 2</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>优化数据访问性能</p>
+            <p>保持数据完整性(主键，外键)</p>
+            <p>改进表的连接操作</p>
+            <p>对结果进行排序</p>
+            <p>简化聚合数据操作</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>什么叫回表？有什么作用？</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>什么叫覆盖索引？有什么作用？</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>什么叫索引合并？有什么作用？</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>什么叫索引合并？有什么作用？</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>什么叫索引合并？有什么作用？</p>
+            <p>可以通过 optimizer_switch 进行优化</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>什么是前缀索引？有什么作用？</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>什么是唯一索引？有什么作用？如何选择？</p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>使用索引</h3>
+            <p>什么是组合索引？有什么作用？</p>
         </section>
 
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>利用 Promise 封装非同步代码</h3>
-            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-              <script>
-
-              </script>
-            </code></pre>
+            <h3>使用索引</h3>
+            <p>索引列在搜索条件单独出现</p>
+            <p>避免隐式类型转换</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>利用 Promise 封装非同步代码</h3>
-            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-              <script>
-
-              </script>
-            </code></pre>
+            <h3>使用索引</h3>
+            <p>删除无效的索引是一种优化</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>利用 Promise 封装非同步代码</h3>
-            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-              <script>
-
-              </script>
-                结合 new Vue() + ref
-            </code></pre>
+            <h3>使用索引</h3>
+            <p>使用 FORCE INDEX iGNORE INDEX 查询提示应该是你最后考虑的方案</p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>利用 Promise 封装非同步代码</h3>
-            <p><a href="https://github.com/IvinWu/weRequest" target="_blank">weRequest</a></p>
-            <p><a href="https://segmentfault.com/a/1190000020794315" target="_blank">从 WeRequest 登陆态管理来聊聊业务代码</a></p>
+            <h3>创建索引</h3>
         </section>
 
-
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>Promise Cache</h3>
-            <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
-              <script>
-
-              </script>
-            </code></pre>
+            <h3>创建索引</h3>
+            <p>SHOW CREATE TABLE table_name\G</p>
+            <p>SHOW INDEXES FROM table_name\G</p>
+            <p>SHOW TABLE STATUS LIKE table_name\G</p>
         </section>
 
-
-
-
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>创建索引</h3>
+            <p>建议同时生产环境同时创建多个索引，节省时间</p>
+        </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
-            <h3>其他</h3>
-            <p><a href="https://cn.rx.js.org/">函数式响应编程库 rx</a></p>
-            <p><a href="https://xstate.js.org/docs/guides/states.html" target="_blank">复杂状态管理 XState</a></p>
-            <p><a href="https://segmentfault.com/a/1190000037532831" target="_blank">利用 XState(有限状态机) 编写易于变更的代码</a> </p>
+            <h3>优化表</h3>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>优化表</h3>
+            <p> ALTER TABLE table_name FORCE, ALGORITHM=INPLACE, LOCK=NONE; </p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>其他工具</h3>
+            <p> <a href="https://docs.percona.com/percona-toolkit/index.html">percona-toolkit</a></p>
+            <p> <a href="https://hanchuanchuan.github.io/goInception/zh/">goInception</a> </p>
         </section>
 
         <section data-auto-animate data-auto-animate-unmatched="fade">
