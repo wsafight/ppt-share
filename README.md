@@ -7,3 +7,5 @@ Share ppt usage reveal.js
 [Promise 使用二三事 (2021)](https://wsafight.github.io/ppt-share/promise-skills.html)
 
 [MySQL 必知必会 (2023)](https://wsafight.github.io/ppt-share/mysql.html)
+
+[JavaScript 设计模式 (2023)](https://wsafight.github.io/ppt-share/design-pattern.html)
