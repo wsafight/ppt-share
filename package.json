@@ -4,7 +4,7 @@
   "description": "PPT-share",
   "license": "MIT",
   "scripts": {
-    "build:perf-2020": "npx slidev build 'pages/perf-2020.md' --base='perf-2020' --out='../docs/perf-2020'"
+    "build:perf-2020": "npx slidev build 'pages/perf-2020.md' --out='../docs/perf-2020'"
   },
   "keywords": [
     "slidev",
