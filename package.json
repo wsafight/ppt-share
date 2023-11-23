@@ -4,7 +4,11 @@
   "description": "PPT-share",
   "license": "MIT",
   "scripts": {
-    "build:perf-2020": "npx slidev build 'pages/perf-2020.md' --base='ppt-share/perf-2020' --out='../docs/perf-2020'"
+    "build:ddd1": "npx slidev build 'pages/ddd.md'  --out='../docs/ddd'",
+    "build:ddd": "npx slidev build 'pages/ddd.md' --base='ppt-share/ddd' --out='../docs/ddd'",
+    "build:perf-2020": "npx slidev build 'pages/perf-2020.md' --base='ppt-share/perf-2020' --out='../docs/perf-2020'",
+    "build:how-program-run": "npx slidev build 'pages/how-program-run.md' --base='ppt-share/how-program-run' --out='../docs/how-program-run'",
+    "build": "npx slidev build 'pages/how-program-run.md' --out='../docs/how-program-run'"
   },
   "keywords": [
     "slidev",
@@ -14,6 +18,9 @@
     "@slidev/cli": "^0.42.7",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest"
+  },
+  "devDependencies": {
+    "server": "1.0.38"
   },
   "browserslist": "> 0.5%, IE 11, not dead",
   "eslintConfig": {
