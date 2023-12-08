@@ -4,11 +4,11 @@
   "description": "PPT-share",
   "license": "MIT",
   "scripts": {
-    "build:ddd1": "npx slidev build 'pages/ddd.md'  --out='../docs/ddd'",
+    "build": "npx slidev build 'pages/binary.md'  --out='../docs/binary'",
     "build:ddd": "npx slidev build 'pages/ddd.md' --base='ppt-share/ddd' --out='../docs/ddd'",
+    "build:binary": "npx slidev build 'pages/binary.md' --base='ppt-share/binary' --out='../docs/binary'",
     "build:perf-2020": "npx slidev build 'pages/perf-2020.md' --base='ppt-share/perf-2020' --out='../docs/perf-2020'",
     "build:how-program-run": "npx slidev build 'pages/how-program-run.md' --base='ppt-share/how-program-run' --out='../docs/how-program-run'",
-    "build": "npx slidev build 'pages/how-program-run.md' --out='../docs/how-program-run'"
   },
   "keywords": [
     "slidev",
